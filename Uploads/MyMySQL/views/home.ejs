@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    
+    <%- include('./partials/nav.ejs') %>
+    
+    <div class="title">
+        <h1> Student Records </h1>
+        <hr color="black" width="80%">
+    </div>
+
+    <div class="students">
+    <% if(students.length > 0) { %>
+        <% students.forEach(student => {%>
+            <div class="student">
+                <p>Roll No. : <%= student.rno %></p>
+                <p>Name &nbsp; : <%= student.name %></p>
+                <a class="delete" data-doc="<%= student.rno %>">
+                    <img src="/trashcan.svg" alt="delete icon">
+                </a>
+                <a class="update" data-doc="<%= student.rno %>">
+                    <img id="edit" src="/edit.png" alt="update icon">
+                </a>
+            </div>
+        <% }); %>
+    <% } else {%>
+        <p> No Records found! </p>
+    <% } %>
+    </div>
+    
+<%- include('./partials/foot.ejs') %>
+
+    <script>
+        const tc = document.querySelectorAll('a.delete');
+        tc.forEach( btn  => {
+            const end = `/del/${btn.dataset.doc}`;
+            btn.addEventListener('click', () => {
+            fetch(end, { method: 'DELETE', })
+                .then(response => response.json())
+                .then(data => window.location.href = data.redirect)
+                .catch(err => console.log(err));
+            });
+        });
+
+        const ub = document.querySelectorAll('a.update');
+        ub.forEach( btn  => {
+            const end = `/upd/${btn.dataset.doc}`;
+            btn.addEventListener('click', () => {
+            fetch(end, { method: 'get', })
+                .then(response => response.json())
+                .then(data => window.location.href = data.redirect)
+                .catch(err => console.log(err));
+            });
+        });
+
+    </script>
+
+</body>
+</html>

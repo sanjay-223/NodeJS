@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    
+    <%- include('./partials/nav.ejs') %>
+    <div class="title">
+        <h1>Student Details</h1>
+        <hr width="20%" color="black">
+    </div>
+    <form method="post">
+        <div class="inp">
+            <input type='text' id='rno' name='rno' required placeholder='Enter Roll No.' readonly>
+            <br>
+            <input type='text' id='name' name='name' required placeholder='Enter Name'>
+        </div>
+        <br>
+        <div class="button">
+            <button type="text">Submit</button>
+        </div>
+    </form>
+    
+    <%- include('./partials/foot.ejs') %>
+
+    <script>
+        const name = '<%= student.name %>';
+        const rno = '<%= student.rno %>';
+
+        const form = document.querySelector('form');
+        form.setAttribute('action',`/updForm/${rno}`);
+
+        const r_inp = document.getElementById('rno');
+        r_inp.setAttribute('value',`${rno}`);
+
+        const n_inp = document.getElementById('name');
+        n_inp.setAttribute('value',`${name}`);
+    </script>
+
+</body>
+</html>

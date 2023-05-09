@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+footer {
+    display: block;
+    position: fixed;
+    bottom : 0px;
+    width: 100%;
+    background-color: #333;
+    color: antiquewhite;
+    text-align: center;
+    padding: 2px 16px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    padding-bottom: 20px;
+    padding-right: 16px;
+}
+  
+.topnav a {
+    float: right;
+    color: antiquewhite;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+  
+.topnav a:hover {
+    background-color: antiquewhite;
+    color: black;
+}
+
+.title {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.students {
+    margin: 2% 10%;
+    width: 80%;
+    float: left;
+    align-content: center;
+}
+
+.student {
+    display: inline-block;
+    width: 16%;
+    margin: 5px 5px;
+    border-radius: 5%;
+    padding: 2px 20px;
+    background-color: #333;
+    color: antiquewhite;
+}
+
+.delete, .update {
+    display: block;
+    position: relative;
+    border-radius: 20%;
+    padding: 2px 2px;
+    margin: 18px 8px;
+    margin-top: 2px;
+    float: right;
+}
+
+.delete:hover, .update:hover {
+    cursor: pointer;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.5);
+    color: #333;
+    background-color: antiquewhite;
+}
+
+#edit {
+    display: block;
+    max-height: 24px;
+    max-width: 20px;
+    height: 24px;
+    width: 20px;
+    margin-top: 2px;
+}
+
+form {
+    padding: 30px 20px;
+    background-color: #333;
+    border-radius: 15%;
+    color: antiquewhite;
+    margin: 4% 39%;
+    width: 20%;
+}
+
+input {
+    background-color:antiquewhite;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    height: 50px;
+    margin: 5% 10%;
+    outline: 0;
+    width: 80%;
+}
+
+button {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    margin-left: 25%;
+    outline: 0;
+    text-align: center;
+    width: 50%;
+}
+
+.about {
+    margin: 4% 10%;
+}
+
+q {
+    font-style: italic;
+    margin: 0% 3%;
+    font-size: 28px;
+    display: inline-block;
+    border: solid 1px black;
+    padding: 2% 5%;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Noto Serif', serif;
+    background-color:antiquewhite;
+}
